@@ -86,6 +86,11 @@ def main() -> None:
             print('     Agent features may not work correctly.', flush=True)
         else:
             print('[ok] Agent dependencies installed successfully.', flush=True)
+            # Reload streaming module so AIAgent (which was None at first
+            # import because deps were missing) gets resolved now.
+            import importlib
+            import api.streaming
+            importlib.reload(api.streaming)
 
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     SESSION_DIR.mkdir(parents=True, exist_ok=True)
