@@ -14,6 +14,7 @@ services:
       - HERMES_WEBUI_HOST=0.0.0.0
       - HERMES_WEBUI_PORT=8787
       - HERMES_WEBUI_STATE_DIR=/data
+      - HERMES_WEBUI_AGENT_DIR=/root/.hermes/hermes-agent
       # Optional: set a password for remote access
       - HERMES_WEBUI_PASSWORD=${HERMES_WEBUI_PASSWORD}
     restart: unless-stopped
